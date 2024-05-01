@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Finances</title>
+    <style>
+        /* Add styles for the navbar and body */
+        
+        .bar{
+            padding-left: 50px;
+        }
+        .logo img {
+        height: 40px;
+        width: auto;
+        }
+        nav {
+            background-color: #333;
+            height: 75px;
+            width:100%;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        nav li {
+            float: left;
+            align-items: center;
+        }
+        nav li a {
+            display: flex;
+            color: #fff;
+            font-size: 21px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            text-decoration: none;
+            width: 150px;
+            height: 45px;
+        }
+        #logo{
+          width:300px;
+        }
+        nav li a:hover {
+            background-color: #555;
+        }
+
+        /* Body */
+        body {
+        background-image: url("/static/images/background.jpg");        
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+        h1 {
+        margin-top: 0;
+        font-size: 48px;
+        text-align: center;
+        color: #333;
+        text-shadow: 2px 2px #ffffff;
+        }
+        p {
+        align-content: flex-start;
+        font-size: 24px;
+        text-align: center;
+        color: #3d2e2e;
+        text-shadow: 1px 1px #333;
+        }
+
+        /* List */
+        ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        }
+        li {
+        margin-right: 5px;
+        background-color: #333333;
+        border-radius: 5px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+        }
+        li:hover {
+        transform: translateY(-5px);
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        
+        h1 {
+            margin-top: 0;
+            margin-bottom: -50px;
+        }
+        .dropdown select {
+        width: 200px; /* or any other desired width */
+        height: 40px; /* or any other desired height */
+        padding: 5px;
+        font-size: 16px; /* or any other desired font size */
+        text-align: left;
+        margin-right: 20px; /* or any other desired margin */
+        }
+        p{
+            align-content: flex-start;
+        }
+        #bar{
+            padding-left: 100px;
+        }
+        .dashboard-img2{
+            margin-top: 50px;
+        }
+        .row2{
+            text-align: left;
+        }
+        h2{
+            font-size: 30px;
+            color: #333;
+            text-shadow: 1px 1px #ffffff;
+        }
+        .dropdown select {
+        background-color: rgb(254, 248, 237,0.8);
+        color: #000000;
+        font-size: 25px;
+        padding: 10px 30px;
+        border: 2px solid #000000;
+        transition: all 0.3s ease-in-out;
+        }
+        select:hover{
+            background-color: rgb(60, 45, 10);
+            color:#fef8ed;
+            transform: scale(1.2);
+            border: 2px solid #fef8ed;
+        }
+        .dropdown select {
+        width: 300px; /* or any other desired width */
+        height: 60px; /* or any other desired height */
+        padding: 5px;
+        font-size: 25px; /* or any other desired font size */
+        text-align:center;
+        margin-right: 20px; /* or any other desired margin */
+        }
+        #hotel {
+        background-color: rgb(254, 248, 237,0.8);
+        color: #000000;
+        font-size: 25px;
+        padding: 10px 30px;
+        border: 2px solid #000000;
+        transition: all 0.3s ease-in-out;
+        width: 200px;
+        }
+        #hotel:hover{
+            background-color: rgb(60, 45, 10);
+            color:#fef8ed;
+            transform: scale(1.1);
+            border: 2px solid #fef8ed;
+        }
+    </style>
+</head>
+
+    <nav>
+        <ul>
+            <li><a id="logo" class="logo" href="http://127.0.0.1:5000/"><img src="/static/images/Logo.png"></a></li>
+            <li><a href="http://127.0.0.1:5000/home">Home</a></li>
+            <li><a href="http://127.0.0.1:5000/bookings">Bookings</a></li>
+            <li><a href="http://127.0.0.1:5000/reviews">Rating/Reviews</a></li>
+            <li><a href="http://127.0.0.1:5000/finance">Finances</a></li>
+            <li><a href="http://127.0.0.1:5000/staffmanagement">Staff Management</a></li>
+            <li><a href="http://127.0.0.1:5000/about">About</a></li>
+        </ul>
+    </nav>
+<br>
+<nav style="background-color: transparent;">
+    <ul style="background-color: transparent;">
+        <li style="background-color: transparent;"><a id="hotel" class="hotel" href="http://127.0.0.1:5000/">{{selected_value}}</a></li>
+    </ul>
+</nav><br>
+
+<body>
+    <br>
+    <h1>Finances</h1><br>
+    
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2 style="font-size: 32px; margin-top: 50px;">TOTAL PROFIT MADE THIS MONTH :</h2>
+        <h2 style="font-size: 40px; color: #3d2e2e; margin-top: 50px; margin-left: 10px;">₹ {{tprofit}}</h2>
+      </div>
+      <br>
+    <h2 style="margin-top: -10px;">| Revenue Generated in {{months}} |</h2>
+    <div style="border: 2px solid #000000;">
+    <div style="display: flex">
+        <div style="flex-direction: column; align-items: center; text-align: center; width: 50%;">
+            <h3>TAJ | MUMBAI</h3>
+            <img src="data:image/png;base64,{{ img_base64_finlin }}" alt="Revenue for the past 3 months" style="width: 100%; margin-top: -90px;">
+        </div>
+        <div style="flex-direction: column; align-items: center; text-align: center; width: 50%;">
+            <h3>TAJ | DELHI</h3>
+            <img src="data:image/png;base64,{{ img_base64_finlin2 }}" alt="Revenue for the past 3 months" style="width: 100%; margin-top: -90px;">
+        </div>
+    </div>
+        <br>
+    </div>
+    <div style="display: flex;">
+        <div style="flex-direction: column; align-items: center; text-align: center; width: 48%;">
+            <h2>| Expenses |</h2>
+            <div style="border: 2px solid #000000;">
+            <h3 style="margin-bottom: -60px;">Expenses this Month : ₹ {{ totalexpense }}</h3>
+            <img src="data:image/png;base64,{{ graph }}" alt="Hotel Expenses">
+        </div>
+        </div>
+        <div style="flex-direction: column; align-items: right; text-align: center; width: 48%; float: right; align-self:flex-end; margin-left: 4%;">
+            <h2>| Revenue Generated |</h2>
+            <div style="border: 2px solid #000000;">
+            <h3 style="margin-bottom: -60px;">Revenue this Month : ₹ {{ totalrevenue1 }}</h3>
+            <img src="data:image/png;base64,{{ rev }}" alt="Hotel Revenue">
+        </div>
+        </div>
+
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; CheckInnAnalytics. All Rights Reserved.</p>
+        </div>
+        </footer>
+        
+</body>

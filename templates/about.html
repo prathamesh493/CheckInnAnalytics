@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About Us</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-DTb+DD11sPfEghbhF/kZL8QvqX9nc1Qck0GUbUL50y0o4g4cUZplzBfr0lUZib6SBCX6/pFyFTiJo1d8TfTnTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<style>
+        /* Add styles for the navbar and body */
+        
+        .bar{
+            padding-left: 50px;
+        }
+        .logo img {
+        height: 40px;
+        width: auto;
+        }
+        nav {
+            background-color: #333;
+            height: 75px;
+            width:100%;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        nav li {
+            float: left;
+            align-items: center;
+        }
+        nav li a {
+            display: flex;
+            color: #fff;
+            font-size: 21px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            text-decoration: none;
+            width: 150px;
+            height: 45px;
+        }
+        #logo{
+          width:300px;
+        }
+        nav li a:hover {
+            background-color: #555;
+        }
+
+        /* Body */
+        body {
+        background-image: url("/static/images/background.jpg");        
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+        h1 {
+        margin-top: 0;
+        font-size: 48px;
+        text-align: center;
+        color: #333;
+        text-shadow: 2px 2px #ffffff;
+        }
+        p {
+        align-content: flex-start;
+        font-size: 24px;
+        text-align: center;
+        color: #3d2e2e;
+        text-shadow: 1px 1px #333;
+        }
+
+        /* List */
+        ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        }
+        li {
+        margin-right: 5px;
+        background-color: #333333;
+        border-radius: 5px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+        }
+        li:hover {
+        transform: translateY(-5px);
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        
+        h1 {
+            margin-top: 0;
+            margin-bottom: -50px;
+        }
+        p{
+            align-content: flex-start;
+        }
+        #bar{
+            padding-left: 100px;
+        }
+        h2{
+            margin-top: 80px;
+            font-size: 28px;
+            color: #333;
+            text-shadow: 1px 1px #ffffff;
+        }
+        .dashboard-img2{
+            margin-top: 50px;
+        }
+        .row2{
+            text-align: left;
+        }
+        #hotel {
+        background-color: rgb(254, 248, 237,0.8);
+        color: #000000;
+        font-size: 25px;
+        padding: 10px 30px;
+        border: 2px solid #000000;
+        transition: all 0.3s ease-in-out;
+        width: 200px;
+        }
+        #hotel:hover{
+            background-color: rgb(60, 45, 10);
+            color:#fef8ed;
+            transform: scale(1.1);
+            border: 2px solid #fef8ed;
+        }
+		.contact-info {
+			display: inline-flex;
+			align-items: center;
+			gap: 10px;
+			margin: 20px 0;
+		}
+
+		.contact-info img {
+			width: 30px;
+			height: 30px;
+		}
+        main {
+		max-width: 95%;
+		margin: 0 auto;
+		padding: 20px;
+		background-color: #0000000e;
+		box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	    }
+            /* Form */
+
+    label {
+    font-size: 24px;
+    color: #3e3213;
+    margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="textarea"], 
+    select {
+    width: 370px;
+    height: 40px;
+    padding: 5px;
+    font-size: 20;
+    }
+    /* Button */
+    button {
+    background-color: #fef8ed;
+    color: #000000;
+    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    margin: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 3px solid #3c2d0a;
+    }
+    button:hover {
+    background-color: #3c2d0a;
+    color: #fff;
+    border : 3px solid black;
+    }
+
+
+.social-icons img {
+  width: 80px;
+  height: 80px;
+  margin-left: 30px;
+  margin-top: -200px;
+  transition: all 0.3s ease-in-out;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+    </style>
+</head>
+<nav>
+	<ul>
+		<li><a id="logo" class="logo" href="http://127.0.0.1:5000/"><img src="/static/images/Logo.png"></a></li>
+		<li><a href="http://127.0.0.1:5000/home">Home</a></li>
+		<li><a href="http://127.0.0.1:5000/bookings">Bookings</a></li>
+		<li><a href="http://127.0.0.1:5000/reviews">Rating/Reviews</a></li>
+		<li><a href="http://127.0.0.1:5000/finance">Finances</a></li>
+		<li><a href="http://127.0.0.1:5000/staffmanagement">Staff Management</a></li>
+		<li><a href="http://127.0.0.1:5000/about">About</a></li>
+	</ul>
+</nav>
+<br>
+<a style="color: #333; font-size: 20px;">{{ message }}</a><br>
+<img src="/static/images/Logo.png" style="width: 580px; height: 100px; margin-bottom: 20px; background-color:rgb(254, 248, 237,0.3);">
+<header>
+	<h1 style="margin-bottom: 20px; text-align: left; align-self:flex-start;">| About Us |</h1>
+</header>
+<body>
+	
+	<main style="margin:20px; margin-left: 100px; margin-right: 100px;" >
+		<div style="display: flex; align-items: center; justify-content: flex-start;">
+			<div style="flex: 1;">
+			  <p>Welcome to CheckInnAnalytics Hotel Management System. We are a company dedicated to providing the best hotel management services to our clients. Our mission is to help hotel owners and managers streamline their operations, increase their revenue, and enhance the overall guest experience.</p>
+			</div>
+			<div style="flex: 1;">
+			<img src="/static/images/Analytics2.png" alt="Hotel Management System Image" style="width: 100%; height: auto;">
+			</div>
+		</div>
+		<div style="display: flex; align-items: center; justify-content: flex-start;">
+		<div style="flex: 1;">
+			<img src="/static/images/Analytics.png" alt="Hotel Management System Image" style="width: 100%; height: auto;">
+		</div>
+		<div style="flex: 1;">
+			<p>Our team consists of experienced professionals who have a deep understanding of the hotel industry. We use the latest technologies and best practices to develop customized solutions that meet the unique needs of each of our clients. We are committed to delivering exceptional service and support to our clients, and we take pride in building long-term relationships with them.</p>
+		</div>
+	</div>
+		<div style="display: flex; align-items: center; justify-content: flex-start;">
+		<div style="flex: 1;">
+			<p >If you have any questions or comments, please feel free to contact us. We would be more than happy to assist you with any inquiries you may have.</p>
+			<p style="margin-top: 40px; margin-bottom: -40px;">Reach us at </p><br>
+            <div class="contact-info" style="margin-right: 20px; margin-left: 25px;">
+				<img src="/static/images/phone-icon.png" alt="Phone Icon">
+				<p>+1-800-123-4567</p>
+			</div>
+			<div class="contact-info">
+				<img src="/static/images/email-icon.png" alt="Email Icon">
+				<p>info@checkinnanalytics.com</p>
+			</div>
+		</div>
+		<div style="flex: 1;">
+			<img src="/static/images/About.png" alt="Hotel Management System Image" style="margin-left: 100px;width: 70%; height: 350px;">
+		</div>
+	</div>	
+    <form method="POST" action="{{ url_for('about') }}">
+    <div style="width: 50%; position: relative;">
+        <fieldset style="border: 1px black solid">
+            <legend style="border: 1px black solid; margin-left: 1em; padding: 0.4em 1em ; font-size: 20px; color: #333;">Contact Us</legend>
+            <table style="width: 100%; margin-top: 30px;">
+                
+                <tr>
+                    <td><label for="name">Hotel Name : </label></td>
+                    <td><input type="text" name="name" id="name"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email : </label></td>
+                    <td><input type="text" name="email" id="email"></td>
+                </tr>
+                <tr>
+                    <td><label for="grievances">Grievances : </label></td>
+                    <td><input type="text" name="grievances" id="grievances"></td>
+                </tr>
+            </table>
+            <div style="width: 100%; text-align: center;">
+                <button type="submit">Submit</button>
+            </div>
+        </fieldset>
+    </div>
+    </form>
+    <br>
+    <div class="social-icons" style="margin-left:750px;margin-top: -350px;">
+    
+        <h2 style="text-align: center; margin-bottom: 80px; margin-left: -100px; font-size: 35px;">Follow Us</h2><br>
+        <a href="https://www.facebook.com/"><img src="/static/images/fb1.png" alt="Facebook Icon"></a>
+        <a href="https://www.instagram.com/checkinnanalytics_india/"><img src="/static/images/insta.png" alt="Instagram Icon"></a>
+        <a href="https://twitter.com/CheckInnA91?t=XjboUsS1ONnoSyxU-XACLQ&s=08"><img src="/static/images/twitter1.png" alt="Twitter Icon"></a>
+    
+    </div>
+      
+      
+
+	</main>
+</body>
+<br>
+
+<footer style="margin-top:90px ;">
+    <div class="container">
+        <p>&copy; CheckInnAnalytics. All Rights Reserved.</p>
+    </div>
+</footer>
+</html>

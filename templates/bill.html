@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bill Generator</title>
+    <style>
+        /* Add styles for the navbar and body */
+        
+        .bar{
+            padding-left: 50px;
+        }
+        .logo img {
+        height: 40px;
+        width: auto;
+        }
+        nav {
+            background-color: #333;
+            height: 75px;
+            width:100%;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        nav li {
+            float: left;
+            align-items: center;
+        }
+        nav li a {
+            display: flex;
+            color: #fff;
+            font-size: 21px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            text-decoration: none;
+            width: 150px;
+            height: 45px;
+        }
+        #logo{
+          width:300px;
+        }
+        nav li a:hover {
+            background-color: #555;
+        }
+
+        /* Body */
+        body {
+        background-image: url("/static/images/background.jpg");        
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+        h1 {
+        margin-top: 0;
+        font-size: 48px;
+        text-align: center;
+        color: #333;
+        text-shadow: 2px 2px #fff;
+        }
+        p {
+        align-content: flex-start;
+        font-size: 24px;
+        text-align: center;
+        color:#333;
+        text-shadow: 2px 2px #333;
+        }
+
+        /* List */
+        ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        }
+        li {
+        margin-right: 5px;
+        background-color: #333333;
+        border-radius: 5px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+        }
+        li:hover {
+        transform: translateY(-5px);
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Button */
+        button {
+        background-color: #fef8ed;
+        color: #000000;
+        font-size: 24px;
+        padding: 10px 20px;
+        border-radius: 20px;
+        border: none;
+        margin: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        border: 3px solid #3c2d0a;
+        }
+        button:hover {
+        background-color: #3c2d0a;
+        color: #fff;
+        border : 3px solid black;
+        }
+
+        /* Form */
+        form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        }
+        label {
+        font-size: 24px;
+        color: #3e3213;
+        margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        
+        select {
+        width: 300px;
+        height: 40px;
+        padding: 5px;
+        font-size: 20;
+        }
+
+        select:hover {
+        background-color: rgba(202, 173, 46, 0.8);
+        transform: scale(1.1);
+        }
+        h2{
+            font-size: 33px;
+            color: #333;
+            text-shadow: 1px 1px #ffffff;
+        }
+        .dropdown select {
+        background-color: rgb(254, 248, 237,0.8);
+        color: #000000;
+        font-size: 25px;
+        padding: 10px 30px;
+        border: 2px solid #000000;
+        transition: all 0.3s ease-in-out;
+        }
+        select:hover{
+            background-color: rgb(60, 45, 10);
+            color:#fef8ed;
+            transform: scale(1.2);
+            border: 2px solid #fef8ed;
+        }
+        .dropdown select {
+        width: 300px; /* or any other desired width */
+        height: 60px; /* or any other desired height */
+        padding: 5px;
+        font-size: 25px; /* or any other desired font size */
+        text-align:center;
+        margin-right: 20px; /* or any other desired margin */
+        }
+        #hotel {
+        background-color: rgb(254, 248, 237,0.8);
+        color: #000000;
+        font-size: 25px;
+        padding: 10px 30px;
+        border: 2px solid #000000;
+        transition: all 0.3s ease-in-out;
+        width: 200px;
+        }
+        #hotel:hover{
+            background-color: rgb(60, 45, 10);
+            color:#fef8ed;
+            transform: scale(1.1);
+            border: 2px solid #fef8ed;
+        }
+    </style>
+    
+</head>
+
+    <nav>
+        <ul>
+            <li><a id="logo" class="logo" href="http://127.0.0.1:5000/"><img src="/static/images/Logo.png"></a></li>
+            <li><a href="http://127.0.0.1:5000/home">Home</a></li>
+            <li><a href="http://127.0.0.1:5000/bookings">Bookings</a></li>
+            <li><a href="http://127.0.0.1:5000/reviews">Rating/Reviews</a></li>
+            <li><a href="http://127.0.0.1:5000/finance">Finances</a></li>
+            <li><a href="http://127.0.0.1:5000/staffmanagement">Staff Management</a></li>
+            <li><a href="http://127.0.0.1:5000/about">About</a></li>
+        </ul>
+    </nav>
+<br>
+<nav style="background-color: transparent;">
+    <ul style="background-color: transparent;">
+        <li style="background-color: transparent;"><a id="hotel" class="hotel" href="http://127.0.0.1:5000/">{{selected_value}}</a></li>
+    </ul>
+</nav><br>
+
+<body>
+    <br><a style="color: red; font-size: 20px;">{{error}}</a>
+    <h1>Hotel Bill Generator</h1>
+    <form method="POST" action="{{ url_for('generate_bill') }}">
+      <label for="id">ID:</label>
+      <input type="text" id="id" name="id"><br><br>
+      <button type="submit" value="Generate Bill" padding="10px 20px" border-radius="5px"; >Generate Bill</button>
+    </form>
+  </body>
+
+<footer style="text-shadow: none;">
+    <div class="container" style="text-shadow: none;">
+        <p style="text-shadow: none;">&copy; CheckInnAnalytics. All Rights Reserved.</p>
+    </div>
+</html>
